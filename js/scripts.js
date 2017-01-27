@@ -2,16 +2,13 @@ function Pizza(size, toppings, price){
 
   this.pizzaSize = size;
   this.pizzaToppings = [toppings];
-  this.pizzaPrice = [price];
+  this.pizzaPrice = price;
 
 }
 //prototypes store methods to be used by all objects of the same type
 Pizza.prototype.pizzaDetails = function() { return this.pizzaSize + "<br>" + this.pizzaToppings + "<br>" + this.pizzaPrice;
 };
 
-Pizza.prototype.totalPizzaPrice = function(){
-  return this.pizzaPrice;
-};
 
 $(document).ready(function(){
   $("#readyToOrderButton").click(function(){
@@ -21,23 +18,20 @@ $(document).ready(function(){
       event.preventDefault(); //do i need prevent default here
       var size= $("#pizzaDetailsForm input[type='radio']:checked").val();
       var toppings = [];
-      var price = [];
+      var price = 0;
       $("#pizzaDetailsForm input[type='checkbox']:checked").each(function(){
         toppings.push($(this).val());
-        price.push(2);
+        price += 2;
       });
       if (size === 'Small'){
-        price.push(5);
+        price += 5;
       } else if (size === "Medium"){
-        price.push(10);
+        price += 10;
       } else {
-        price.push(20);
+        price += 20;
       }
       var newPizza = new Pizza(size, toppings, price);
-
-      var sum = newPizza.totalPizzaPrice();
-      alert(sum);
-
+      alert(price);
       $(".eachPizzaDisplay").append("<li><span class='displayPizza'>" +  newPizza.pizzaDetails() + "</span></li>");
 
 
