@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-#showForm, #addPizzaOption, #customerDetailsForm {
+#showForm, #checkoutButton, #customerDetailsForm, #orderDisplay{
   display: none;
 }
 
