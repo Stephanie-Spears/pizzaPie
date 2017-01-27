@@ -1,4 +1,4 @@
-* {
+body {
   font-family: Fredericka the Great;
   text-align: center;
   list-style: none;
@@ -6,6 +6,13 @@
 
 #showForm, #checkoutButton, #customerDetailsForm, #orderDisplay{
   display: none;
+}
+
+.displayPizza{
+  list-style: none;
+  color: blue;
+  font-size: 2em;
+  /*font-family: Shadows Into Light;*/
 }
 
 
