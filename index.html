@@ -16,26 +16,26 @@
       <div class="jumbotron">
         <h1>Pizza Delivery</h1>
       </div>
-      <div class="section well">
-        <button type="button" name="button" class="btn btn-xl">Order a Pizza</button>
+      <div class="section well" id="readyToOrderSection">
+        <button type="button" name="button" class="btn btn-xl" id="readyToOrderButton">Ready to Order?</button>
       </div>
 
-
-
-      <div class="section well" id="showForm">
+      <div class="section" id="showForm">
         <div class="row">
           <div class="col-xs-12">
             <form id="pizzaDetailsForm">
-              <h2>What Kind of Pizza</h2>
+              <h2 class="well">Customize your Pizza!</h2>
               <div class="form-group">
-                <input type="radio" name="pizzaSize" value="small"> Small<br>
+                <h3>Choose a Size</h3>
+                <input type="radio" name="pizzaSize" value="small" checked> Small<br>
                 <input type="radio" name="pizzaSize" value="medium"> Medium<br>
-                <input type="radio" name="pizzaSize" value="large" checked> Large
+                <input type="radio" name="pizzaSize" value="large"> Large
               </div>
               <div class="form-group">
+                <h3>Choose toppings</h3>
                 <div class="check-box">
                   <label>
-                    <input type="checkbox">Cheese
+                    <input type="checkbox" checked>Cheese
                   </label>
                   <label>
                     <input type="checkbox">Pepperoni
@@ -51,9 +51,16 @@
                   </label>
                 </div><!-- NOTE: end check-box div -->
                 <div class="btn-group">
-                  <button class="btn btn-lg btn-primary" type="submit">Order</button>
+                  <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton">Order Pizza</button>
+                  <button class="btn btn-lg btn-danger" type="reset" name="button">Reset Pizza</button>
+                </div>
+                <div class="btn-group" id="addPizzaOption">
+                  <button class="btn btn-lg btn-success" type="submit" id="addNewPizzaButton">Add another Pizza</button>
+                  <button class="btn btn-lg btn-danger" type="submit">Continue to Checkout</button>
                 </div>
               </div><!-- NOTE: end form-group -->
+            </form>
+            <form id="customerDetailsForm">
               <h2>Delivery Details</h2>
               <div class="form-group">
                 <input class="form-control" id="customerName" type="text" placeholder="Name" required>
@@ -68,15 +75,13 @@
                 <input class="form-control" id="customerEmail" type="text" placeholder="Email" required>
               </div>
               <div class="btn-group">
-                <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-                <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button">Reset</button>
+                <button class="btn btn-lg btn-primary" type="submit">Confirm Order</button>
+                <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button">Reset Form</button>
               </div>
             </form><!-- NOTE: end form div -->
           </div><!-- NOTE: end col 1 div -->
         </div><!-- NOTE: end row1 div -->
       </div><!-- NOTE: end section 1 div -->
-
-
     </div><!-- NOTE: end container div -->
   </body>
 </html>
