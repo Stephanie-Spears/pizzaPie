@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Fredericka+the+Great|Bungee+Shade" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" >
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizza</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Pizza Delivery</h1>
+      </div>
+      <div class="section well">
+        <button type="button" name="button" class="btn btn-xl">Order a Pizza</button>
+      </div>
+
+
+
+      <div class="section well" id="showForm">
+        <div class="row">
+          <div class="col-xs-12">
+            <form id="pizzaDetailsForm">
+              <h2>What Kind of Pizza</h2>
+              <div class="form-group">
+                <input type="radio" name="pizzaSize" value="small"> Small<br>
+                <input type="radio" name="pizzaSize" value="medium"> Medium<br>
+                <input type="radio" name="pizzaSize" value="large" checked> Large
+              </div>
+              <div class="form-group">
+                <div class="check-box">
+                  <label>
+                    <input type="checkbox">Cheese
+                  </label>
+                  <label>
+                    <input type="checkbox">Pepperoni
+                  </label>
+                  <label>
+                    <input type="checkbox">Sausage
+                  </label>
+                  <label>
+                    <input type="checkbox">Olives
+                  </label>
+                  <label>
+                    <input type="checkbox">Cat
+                  </label>
+                </div><!-- NOTE: end check-box div -->
+                <div class="btn-group">
+                  <button class="btn btn-lg btn-primary" type="submit">Order</button>
+                </div>
+              </div><!-- NOTE: end form-group -->
+              <h2>Delivery Details</h2>
+              <div class="form-group">
+                <input class="form-control" id="customerName" type="text" placeholder="Name" required>
+                <label for="customerName"></label>
+              </div>
+              <div class="form-group">
+                <label for="customerAddress"></label>
+                <input class="form-control" id="customer Address" type="text" placeholder="Address" required>
+              </div>
+              <div class="form-group">
+                <label for="customerEmail"></label>
+                <input class="form-control" id="customerEmail" type="text" placeholder="Email" required>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button">Reset</button>
+              </div>
+            </form><!-- NOTE: end form div -->
+          </div><!-- NOTE: end col 1 div -->
+        </div><!-- NOTE: end row1 div -->
+      </div><!-- NOTE: end section 1 div -->
+
+
+    </div><!-- NOTE: end container div -->
+  </body>
+</html>

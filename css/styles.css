@@ -1,0 +1,17 @@
+* {
+  font-family: Fredericka the Great;
+  text-align: center;
+  list-style: none;
+}
+
+#showForm {
+  display: none;
+}
+
+
+.btn-xl{
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:50%;
+}
