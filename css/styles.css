@@ -1,17 +1,25 @@
-body {
+.jumbotron, h1, h2 {
   font-family: Fredericka the Great;
 
+}
+
+body {
+
   list-style: none;
+  font-family: Averia Serif Libre;
 }
 
 #showForm, #checkoutButton, #customerDetailsForm, #orderDisplay{
   display: none;
 }
 
-.displayPizza{
-  list-style: none;
-  font-size: 2em;
+.displayPizzaClass{
+  color: orange;
   /*font-family: Shadows Into Light;*/
+}
+
+.displayTotalClass{
+
 }
 
 

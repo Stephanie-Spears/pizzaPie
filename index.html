@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Fredericka+the+Great|Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Fredericka+the+Great|Bungee+Shade|Averia+Serif+Libre" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet" >
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -16,24 +16,23 @@
       <div class="jumbotron">
         <h1>Pizza Delivery</h1>
       </div>
-      <div class="section well" id="readyToOrderSection">
+      <div class="section" id="readyToOrderSection">
         <button type="button" name="button" class="btn btn-xl" id="readyToOrderButton">Ready to Order?</button>
       </div>
 
       <div class="section" id="showForm">
-        <div class="row">
-          <div class="col-xs-6">
+        <div class="row"><!-- NOTE: row1 div -->
+          <div class="col-xs-6"><!-- NOTE: col1 div -->
+            <h2>Customize your Pizza!</h2>
             <form id="pizzaDetailsForm">
-              <h2 class="well">Customize your Pizza!</h2>
-              <div class="form-group">
+              <div class="form-group" id="radioInput"><!-- NOTE: radio input -->
                 <h3>Choose a Size</h3>
                 <input type="radio" name="pizzaSize" value="Small" checked> Small<br>
                 <input type="radio" name="pizzaSize" value="Medium"> Medium<br>
                 <input type="radio" name="pizzaSize" value="Large"> Large
               </div>
-              <div class="form-group">
+              <div class="form-group" id="checkBoxesInput"><!-- NOTE: check-boxes -->
                 <h3>Choose toppings</h3>
-                <div class="check-box">
                   <label>
                     <input value=" Cheese" type="checkbox" checked>Cheese
                   </label>
@@ -44,63 +43,83 @@
                     <input value=" Sausage" type="checkbox">Sausage
                   </label>
                   <label>
-                    <input value=" Olvies" type="checkbox">Olives
+                    <input value=" Olives" type="checkbox">Olives
                   </label>
                   <label>
                     <input value=" Cat" type="checkbox">Cat
                   </label>
-                </div><!-- NOTE: end check-box div -->
+                  <label>
+                    <input value=" Mushrooms" type="checkbox">Mushrooms
+                  </label>
+                  <label>
+                    <input value=" Peppers" type="checkbox">Peppers
+                  </label>
+                  <label>
+                    <input value=" Vegetarian" type="checkbox">Vegetarian
+                  </label>
+                  <label>
+                    <input value=" MeatLovers" type="checkbox">Meatlovers
+                  </label>
+                  <label>
+                    <input value=" Dog" type="checkbox">Dog
+                  </label>
               </div><!-- NOTE: end form-group div *checkboxes -->
-              <div class="form-group">
-                <div class="btn-group">
-                  <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton">Add Pizza</button>
-                  <button class="btn btn-lg btn-primary" type="submit" id="checkoutButton">Continue to Checkout</button>
-                </div><!-- NOTE: end btn-group div -->
-              </div><!-- NOTE: end form-group div*buttons -->
+              <div class="btn-group-vertical"><!-- NOTE: button stacks -->
+                <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton">Add Pizza</button>
+                <button class="btn btn-lg btn-warning" type="submit" id="checkoutButton">Continue to Checkout</button>
+              </div><!-- NOTE: end btn-group div -->
+            </form><!-- NOTE: end pizzaDetailsForm div -->
             </div><!-- NOTE: end col1 div -->
 
-            <div class="section well">
-              <div class="row">
-                <div class="col-xs-6">
-                  <div class="form-group">
-                    <h2 class="well">Your Order: </h2>
-                    <ul class="eachPizzaDisplay">
-                    </ul>
-                  </div><!-- NOTE: end form-group div -->
-                </form><!-- NOTE: end form div -->
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                <span class="sr-only">45% Complete</span>
               </div>
-            </div> <!-- NOTE: end col2 div -->
+            </div>
+
+
+            <div class="col-xs-6"><!-- NOTE: col2 div -->
+              <h2>Your Order: </h2>
+              <div class="list-group">
+                <ul class="getPizzaDisplay">
+                  <button type="button" class="list-group-item"></button>
+                </ul>
+              </div>
+            </div><!-- NOTE: end col2 div -->
+
+
           </div><!-- NOTE: end row div -->
         </div><!-- NOTE: end section div -->
 
-
-            <div class="section">
-            <div class="row">
-              <div class="col-xs-12">
-
-
-            <form id="customerDetailsForm">
-              <h2>Delivery Details</h2>
-              <div class="form-group">
-                <input class="form-control" id="customerName" type="text" placeholder="Name" required>
-                <label for="customerName"></label>
-              </div>
-              <div class="form-group">
-                <label for="customerAddress"></label>
-                <input class="form-control" id="customer Address" type="text" placeholder="Address" required>
-              </div>
-              <div class="form-group">
-                <label for="customerEmail"></label>
-                <input class="form-control" id="customerEmail" type="text" placeholder="Email" required>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-lg btn-primary" type="submit">Confirm Order</button>
-                <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button">Reset Form</button>
-              </div>
-            </form><!-- NOTE: end form div -->
-          </div><!-- NOTE: end col 1 div -->
-        </div><!-- NOTE: end row1 div -->
-      </div><!-- NOTE: end section 1 div -->
+        <div class="section">
+          <div class="row">
+            <div class="col-xs-12">
+              <form id="customerDetailsForm">
+                <h2>Delivery Details</h2>
+                <div class="form-group">
+                  <input class="form-control" id="customerName" type="text" placeholder="Name" required>
+                  <label for="customerName"></label>
+                </div>
+                <div class="form-group">
+                  <label for="customerAddress"></label>
+                  <input class="form-control" id="customerAddress" type="text" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                  <label for="customerEmail"></label>
+                  <input class="form-control" id="customerEmail" type="text" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="customerCoupon"></label>
+                  <input class="form-control" id="customerCoupon" type="text" placeholder="enter coupon code"> <!-- NOTE: SETUP SPECIFIC DISCOUNTS IF THEY TYPE IN SOMETHING LIKE...stephanieisdope2017 -->
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-lg btn-primary" type="submit">Confirm Order</button>
+                  <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button">Reset Form</button>
+                </div>
+              </form><!-- NOTE: end form div -->
+            </div><!-- NOTE: end col 1 div -->
+          </div><!-- NOTE: end row1 div -->
+        </div><!-- NOTE: end section 1 div -->
     </div><!-- NOTE: end container div -->
   </body>
 </html>
