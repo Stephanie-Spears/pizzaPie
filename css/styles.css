@@ -1,6 +1,6 @@
 body {
   font-family: Fredericka the Great;
-  text-align: center;
+
   list-style: none;
 }
 
@@ -10,7 +10,6 @@ body {
 
 .displayPizza{
   list-style: none;
-  color: blue;
   font-size: 2em;
   /*font-family: Shadows Into Light;*/
 }
@@ -20,5 +19,5 @@ body {
   padding: 10px 20px;
   font-size: 20px;
   border-radius: 10px;
-  width:50%;
+  width:100%;
 }

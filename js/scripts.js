@@ -8,7 +8,7 @@ Pizza.prototype.pizzaDetails = function() { return this.pizzaSize + "<br>" + thi
 };
 
 Pizza.prototype.eachPizzaPrice = function(){
-  alert(this.pizzaToppings);
+
   for (var i = 0; i < this.pizzaToppings.length; i++)
   {
     this.pizzaPrice +=2;
@@ -44,16 +44,14 @@ $(document).ready(function(){
       totalPrice += price;
 
       $(".eachPizzaDisplay").append("<li><span class='displayPizza'>" +  newPizza.pizzaDetails() + "</span></li>");
-      $(".eachPizzaDisplay").append("<h2><span class='displayTotal'>" +  totalPrice + "</span></h2>");
+      $(".eachPizzaDisplay").append("<h2><span class='displayTotal'>Total: " +  totalPrice + "</span></h2>");
       $(".eachPizzaDisplay").replace("<h2><span class='displayTotal'>" +  totalPrice + "</span></h2>");
-
 
       $("#checkoutButton").show();
       $("#checkoutButton").click(function(event){
         event.preventDefault();
         $("#pizzaDetailsForm").hide();
         $("#customerDetailsForm").show();
-
       });
     });
   });

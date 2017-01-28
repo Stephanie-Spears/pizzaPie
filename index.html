@@ -22,7 +22,7 @@
 
       <div class="section" id="showForm">
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-xs-6">
             <form id="pizzaDetailsForm">
               <h2 class="well">Customize your Pizza!</h2>
               <div class="form-group">
@@ -50,24 +50,35 @@
                     <input value=" Cat" type="checkbox">Cat
                   </label>
                 </div><!-- NOTE: end check-box div -->
-              </div>
+              </div><!-- NOTE: end form-group div *checkboxes -->
               <div class="form-group">
                 <div class="btn-group">
                   <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton">Add Pizza</button>
                   <button class="btn btn-lg btn-primary" type="submit" id="checkoutButton">Continue to Checkout</button>
-                </div>
+                </div><!-- NOTE: end btn-group div -->
+              </div><!-- NOTE: end form-group div*buttons -->
+            </div><!-- NOTE: end col1 div -->
+
+            <div class="section well">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <h2 class="well">Your Order: </h2>
+                    <ul class="eachPizzaDisplay">
+                    </ul>
+                  </div><!-- NOTE: end form-group div -->
+                </form><!-- NOTE: end form div -->
               </div>
-
-              <div class="section well">
-              <div class="form-group">
-                <h2 class="well">Your Order: </h2>
-                  <ul class="eachPizzaDisplay">
-                  </ul>
-                </div>
-              </div>
+            </div> <!-- NOTE: end col2 div -->
+          </div><!-- NOTE: end row div -->
+        </div><!-- NOTE: end section div -->
 
 
-            </form>
+            <div class="section">
+            <div class="row">
+              <div class="col-xs-12">
+
+
             <form id="customerDetailsForm">
               <h2>Delivery Details</h2>
               <div class="form-group">
