@@ -1,7 +1,12 @@
-.jumbotron, h1, h2 {
+.jumbotron{
   font-family: Fredericka the Great;
-
+  text-align: center;
 }
+
+#orderHeader, #totalHeader{
+  text-align: center;
+}
+
 
 body {
 
