@@ -1,19 +1,3 @@
-function Pizza(size, toppings, price, id){
-  this.pizzaSize = size;
-  this.pizzaToppings = toppings;
-  this.pizzaPrice = price;
-  this.pizzaID = id;
-}
-
-function PizzaList(newPizza, total){
-  this.pizzaList = newPizza;
-  this.pizzaListTotal = total;
-  alert("function PizzaList: " + this.pizzaList);
-}
-
-// function resetPizza(){
-// //function to reset pizza each time the button is clicked
-// }
 // function removePizza(){
 // //function to replace the jquery remove() in the front-end?
 // }
@@ -24,6 +8,16 @@ function PizzaList(newPizza, total){
 // function createToppingsList(){
 // //to dynamically add the checkboxes ... is it better practice to do it this way? or in the html...
 // }
+function Pizza(){
+  this.pizzaSize = "";
+  this.pizzaToppings = [];
+  this.pizzaPrice = 0;
+}
+
+function PizzaList(){
+  this.pizzaList = [];
+  this.pizzaListTotal = 0;
+}
 
 Pizza.prototype.getPizzaToppings = function (){
   var toppings = [];
@@ -50,67 +44,63 @@ Pizza.prototype.getPizzaPrice = function(){
   return this.pizzaPrice;
 };
 
+PizzaList.prototype.calculateTotalPrice = function(){
+  var totalPrice = 0;
+  for (var i=0; i< this.pizzaList.length; i++){
+    totalPrice += this.pizzaList[i].pizzaPrice;
+  }
+  this.pizzaListTotal = totalPrice;
+  return this.PizzaListTotal;
+};
+
 Pizza.prototype.formatOutput = function() {
-
-  this.pizzaPrice = this.pizzaPrice.toFixed(2);
-  this.pizzaPrice = "($" + this.pizzaPrice + ")";
-  return "<button class='list-group-item'>" + this.pizzaSize + " " + this.pizzaToppings + " pizza " + this.pizzaPrice + "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
+  return "<button class='list-group-item'>" +  this.pizzaSize + " " + this.pizzaToppings + " pizza " + "($" + this.pizzaPrice.toFixed(2) + ")<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
 };
-
-PizzaList.prototype.formatOutput = function(){
-//add formatting for each pizza output on receipt
-  this.pizzaListTotal = this.pizzaListTotal.toFixed(2);
-  return this.pizzaList + this.pizzaListTotal;
-};
+//
+// PizzaList.prototype.formatOutput = function(){
+// //add formatting for each pizza output on receipt
+//   this.pizzaListTotal = this.pizzaListTotal.toFixed(2);
+//   return this.pizzaList + this.pizzaListTotal;
+// };
 
 
 
 $(document).ready(function(){
+  var myPizzaList = new PizzaList();
   $("#readyToOrderButton").click(function(){
-    $("#readyToOrderSection").toggle();
+    $(this).remove();
     $("#showForm").show();
 
     $("#orderPizzaButton").click(function(event){
       event.preventDefault();
-      var id = 0;
-      var total = 0;
-      var size;
-      var toppings;
-      var price = 0;
+      var myPizza = new Pizza();
+      $("#customerOrder").show();
       $("#checkoutButton").show();
 
-      var newPizza = new Pizza(size, toppings, price, id);
-      var newPizzaList = new PizzaList(newPizza, total);
-
-      toppings = newPizza.getPizzaToppings();
-      price = newPizza.getPizzaPrice();
-      total += price;
-      id = id + 1;
-
-      alert("pizza: " + Object.values(newPizza)); //newPizza is storing an array of objects...newPizza gets all the previous pizzas stored in it--because i'm not clearing it each time i click add new-- i could set up a new var and set it equal to newPizza, and not clear THAT one, and i'll have my array
-      alert("newPizzaList: " + Object.values(newPizzaList));
+      myPizza.getPizzaToppings();
+      myPizza.getPizzaPrice();
+      myPizzaList.pizzaList.push(myPizza);
+      myPizzaList.calculateTotalPrice();
 
 
+      $(".pizzaList").prepend(myPizza.formatOutput());
 
-      $(".pizzaList").prepend(newPizza.formatOutput());
+
       $(".pizzaList button").click(function(){
-        // alert(Object.values(newPizza));
-        alert(Object.values(newPizza.pizzaPrice));
 
-
+        var remove = $(this).val();
+        alert("remove: " + remove);
         $(this).remove();
+        alert("object in delete: " + Object.values(myPizzaList));
       });
 
-      $("#showTotalPanel").text("$" + total.toFixed(2));
-
-
+      $("#showTotal").text("$" + myPizzaList.pizzaListTotal.toFixed(2));
 
       $("#checkoutButton").click(function(event){
         event.preventDefault();
-        $("#pizzaDetailsForm").hide();
+        $("#showForm").hide();
         $("#customerDetailsForm").show();
       });
-
     });
   });
 });

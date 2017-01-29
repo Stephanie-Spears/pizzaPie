@@ -3,18 +3,14 @@
   text-align: center;
 }
 
-#orderHeader, #totalHeader{
+
+body {
+  list-style: none;
+  font-family: Averia Serif Libre;
   text-align: center;
 }
 
-
-body {
-
-  list-style: none;
-  font-family: Averia Serif Libre;
-}
-
-#showForm, #checkoutButton, #customerDetailsForm, #orderDisplay{
+#showForm, #checkoutButton, #customerDetailsForm, #customerOrder{
   display: none;
 }
 

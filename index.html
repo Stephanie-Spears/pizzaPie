@@ -17,9 +17,9 @@
       <div class="jumbotron">
         <h1>Pizza Time!</h1>
       </div>
-      <div class="section" id="readyToOrderSection">
-        <button type="button" name="button" class="btn btn-xl" id="readyToOrderButton">Ready to Order?</button>
-      </div>
+
+      <button type="button" name="button" class="btn btn-xl" id="readyToOrderButton">Ready to Order?</button>
+
 
       <div class="section" id="showForm">
         <div class="row"><!-- NOTE: row1 div -->
@@ -68,25 +68,27 @@
               </div><!-- NOTE: end form-group div *checkboxes -->
               <div class="btn-group-vertical"><!-- NOTE: button stacks -->
                 <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton">Add Pizza</button>
+                <button class="btn btn-lg btn-warning" type="submit" id="checkoutButton">Continue to Checkout</button>
               </div><!-- NOTE: end btn-group div -->
             </form><!-- NOTE: end pizzaDetailsForm div -->
-          </div>
-            </div><!-- NOTE: end col1 div -->
+          </div><!-- NOTE: end list-group-item div -->
+        </div><!-- NOTE: end col1 div -->
 
-            <div class="col-xs-6"><!-- NOTE: col2 div -->
+            <div class="col-xs-6" id="customerOrder"><!-- NOTE: col2 div -->
               <div class="list-group-item">
-              <h2 id="orderHeader">Your Order </h2>
+                <h2 class="well">Your Order</h2>
                 <ul class="pizzaList">
                 </ul>
-              <h2 id="totalHeader">Your Total </h2>
-                <ul class="getTotal">
-                  <panel id="showTotalPanel" class="list-group-item"></panel>
-                  <button class="btn btn-lg btn-warning" type="submit" id="checkoutButton">Continue to Checkout</button>
-                </ul>
               </div>
-            </div><!-- NOTE: end col2 div -->
+                <div class="list-group-item">
+                  <header class="panel panel-info">Your Total</header>
+                  <div class="list-group-item" id="showTotal">
+                  </div>
+                </div>
 
+                    <!-- <panel id="showTotal" class="list-group-item"></panel> -->
 
+          </div><!-- NOTE: end col2 div -->
           </div><!-- NOTE: end row div -->
         </div><!-- NOTE: end section div -->
 
