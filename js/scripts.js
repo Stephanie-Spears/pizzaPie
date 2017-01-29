@@ -1,22 +1,14 @@
-// function removePizza(){
-// //function to replace the jquery remove() in the front-end?
-// }
-// function getTotal(){
-// //to replace total calculations in main
-// return total;
-// }
-// function createToppingsList(){
-// //to dynamically add the checkboxes ... is it better practice to do it this way? or in the html...
-// }
 function Pizza(){
   this.pizzaSize = "";
   this.pizzaToppings = [];
   this.pizzaPrice = 0;
+
 }
 
 function PizzaList(){
   this.pizzaList = [];
   this.pizzaListTotal = 0;
+
 }
 
 Pizza.prototype.getPizzaToppings = function (){
@@ -47,6 +39,7 @@ Pizza.prototype.getPizzaPrice = function(){
 PizzaList.prototype.calculateTotalPrice = function(){
   var totalPrice = 0;
   for (var i=0; i< this.pizzaList.length; i++){
+
     totalPrice += this.pizzaList[i].pizzaPrice;
   }
   this.pizzaListTotal = totalPrice;
@@ -54,15 +47,8 @@ PizzaList.prototype.calculateTotalPrice = function(){
 };
 
 Pizza.prototype.formatOutput = function() {
-  return "<button class='list-group-item'>" +  this.pizzaSize + " " + this.pizzaToppings + " pizza " + "($" + this.pizzaPrice.toFixed(2) + ")<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
+  return "<button class='list-group-item'>" +  this.pizzaSize + " " + this.pizzaToppings + " pizza " + "($" + this.pizzaPrice.toFixed(2) + ")<span class='glyphicon glyphicon-heart-empty' aria-hidden='true'></span></button>";
 };
-//
-// PizzaList.prototype.formatOutput = function(){
-// //add formatting for each pizza output on receipt
-//   this.pizzaListTotal = this.pizzaListTotal.toFixed(2);
-//   return this.pizzaList + this.pizzaListTotal;
-// };
-
 
 
 $(document).ready(function(){
@@ -79,23 +65,12 @@ $(document).ready(function(){
 
       myPizza.getPizzaToppings();
       myPizza.getPizzaPrice();
-      myPizzaList.pizzaList.push(myPizza);
-      myPizzaList.calculateTotalPrice();
-
-
       $(".pizzaList").prepend(myPizza.formatOutput());
 
-
-      $(".pizzaList button").click(function(){
-
-        var remove = $(this).val();
-        alert("remove: " + remove);
-        $(this).remove();
-        alert("object in delete: " + Object.values(myPizzaList));
-      });
-
+      myPizzaList.pizzaList.push(myPizza);
+      // alert(Object.values(myPizzaList));
+      myPizzaList.calculateTotalPrice();
       $("#showTotal").text("$" + myPizzaList.pizzaListTotal.toFixed(2));
-
       $("#checkoutButton").click(function(event){
         event.preventDefault();
         $("#showForm").hide();
