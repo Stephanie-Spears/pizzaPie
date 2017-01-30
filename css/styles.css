@@ -10,7 +10,7 @@ body {
   text-align: center;
 }
 
-#showForm, #checkoutButton, #customerDetailsForm, #customerOrder{
+#showForm, #checkoutButton, #customerDetailsForm, #customerOrder, #removePizzaButton{
   display: none;
 }
 
