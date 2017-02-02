@@ -1,21 +1,19 @@
-function Pizza(){
-  this.pizzaSize = "";
-  this.pizzaToppings = [];
-  this.pizzaPrice = 0;
-  this.clearPizza = function(myPizza){
-    this.pizzaSize = "";
-    this.pizzaToppings = [];
-    this.pizzaPrice = 0;
-  };
-  // this.changePizzaID = function(){
-  //
-  // };
-  // this.getToppings = function(pizzaToppings){
-  //   this.pizzaToppings = pizzaToppings;
-  // };
-  // this.getSize = function(pizzaSize){
-  //   this.pizzaSize = pizzaSize;
-  // };
+function Pizza(size, toppings){
+  this.pizzaSize = size;
+  this.pizzaToppings = toppings;
+  for (var i = 0; i < this.pizzaToppings.length; i++)
+  {
+    this.pizzaPrice +=2.50;
+  }
+  if (this.pizzaSize === 'Small'){
+    this.pizzaPrice += 5;
+  }
+  else if (this.pizzaSize === 'Medium'){
+    this.pizzaPrice += 10;
+  }
+  else if (this.pizzaSize === 'Large') {
+    this.pizzaPrice += 20;
+  }
 }
 
 // Pizza.prototype.getToppings = function(){
@@ -65,14 +63,27 @@ Pizza.prototype.formatOutput = function() {
   toppingsString.replace(",", "");
   toppingsString = "<ul>" + toppingsString + "</ul>";
 
-  formattedOutput = "<button class='btn btn-default btn-lg dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>" + this.pizzaSize + " Pizza " + "<span class='caret'></span></button><ul class='dropdown-menu'><li class='dropdown-header><a href='#'>" + " Size " + "</a></li><li class='size'></li><li role='separator' class='divider'></li><li class='dropdown-header'><a href='#'>" + " Toppings "  + "</a></li><li class='toppings'></li><li role='separator' class='divider'></li><li class='dropdown-header'><a href='#'>" + " Price " + "</a></li><li class='price'></li></ul></div>";
+  // formattedOutput = "<button class='btn btn-default btn-lg dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>" + this.pizzaSize + " Pizza " + "<span class='caret'></span></button><ul class='dropdown-menu'><li class='dropdown-header><a href='#'>" + " Size " + "</a></li><li class='size'></li><li role='separator' class='divider'></li><li class='dropdown-header'><a href='#'>" + " Toppings "  + "</a></li><li class='toppings'></li><li role='separator' class='divider'></li><li class='dropdown-header'><a href='#'>" + " Price " + "</a></li><li class='price'></li></ul></div>";
+
+  // var node = element.cloneNode();
+  // document.createElement(element);
+  // document.createTextNode(text);
+  // var node=document.createTextNode("blah");
+  // element.appendChild(newNode);
+  // element.insertBefore(node1, node2);
+
+  var p = document.createElement("p");
+  var node = document.createTextNode("some new text");
+  p.appendChild(node);
+
+  var div = document.getElementById("#pizzaListID");
+  div.appendChild(p);
+
+        //
+        // $(".size").html("<ul>" + this.pizzaSize + "</ul>"); $(".price").html("<ul>" + this.pizzaPrice + "</ul>"); $(".toppings").html(toppingsString);
 
 
-
-        $(".size").html("<ul>" + this.pizzaSize + "</ul>"); $(".price").html("<ul>" + this.pizzaPrice + "</ul>"); $(".toppings").html(toppingsString);
-
-
-return formattedOutput;
+return node;
 
 };
 
@@ -86,7 +97,12 @@ $(document).ready(function(){
       event.preventDefault();
       var myPizza = new Pizza();
       $("#customerOrder").show();
-      myPizza.getPizzaPrice();
+      // var toppings = [];
+
+      myPizza.pizzaToppings = $("#pizzaDetailsForm input[type='checkbox']:checked").each(function(){
+        toppings.push($(this).val());
+      });
+      myPizza.pizzaSize = $("#pizzaDetailsForm input[type='radio']:checked").val();
 
       $(".pizzaList").prepend(myPizza.formatOutput());
 
