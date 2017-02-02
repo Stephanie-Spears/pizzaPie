@@ -32,59 +32,105 @@
                 </div>
                 <div class="form-group" id="checkBoxesInput"><!-- NOTE: check-boxes -->
                   <h3>Choose toppings</h3>
-                  <label>
-                    <input value=" Cheese" type="checkbox" checked>Cheese
-                  </label>
-                  <label>
-                    <input value=" Pepperoni" type="checkbox">Pepperoni
-                  </label>
-                  <label>
-                    <input value=" Sausage" type="checkbox">Sausage
-                  </label>
-                  <label>
-                    <input value=" Olives" type="checkbox">Olives
-                  </label>
-                  <label>
-                    <input value=" Cat" type="checkbox">Cat
-                  </label>
-                  <label>
-                    <input value=" Mushrooms" type="checkbox">Mushrooms
-                  </label>
-                  <label>
-                    <input value=" Peppers" type="checkbox">Peppers
-                  </label>
-                  <label>
-                    <input value=" Vegetarian" type="checkbox">Vegetarian
-                  </label>
-                  <label>
-                    <input value=" MeatLovers" type="checkbox">Meatlovers
-                  </label>
-                  <label>
-                    <input value=" Dog" type="checkbox">Dog
-                  </label>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <label>
+                        <input value=" Cheese" type="checkbox" checked>Cheese
+                      </label>
+                      <label>
+                        <input value=" Pepperoni" type="checkbox">Pepperoni
+                      </label>
+                      <label>
+                        <input value=" Sausage" type="checkbox">Sausage
+                      </label>
+                      <label>
+                        <input value=" Olives" type="checkbox">Olives
+                      </label>
+                    </div><!-- NOTE: END MINI DIV COL-4 -->
+                    <div class="col-xs-4">
+                      <label>
+                        <input value=" Cat" type="checkbox">Cat
+                      </label>
+                      <label>
+                        <input value=" Mushrooms" type="checkbox">Mushrooms
+                      </label>
+                      <label>
+                        <input value=" Peppers" type="checkbox">Peppers
+                      </label>
+                      <label>
+                        <input value=" Vegetarian" type="checkbox">Vegetarian
+                      </label>
+                    </div><!-- NOTE: END MINI DIV COL-4 TWO -->
+                    <div class="col-xs-4">
+                      <label>
+                        <input value=" MeatLovers" type="checkbox">Meatlovers
+                      </label>
+                      <label>
+                        <input value=" Dog" type="checkbox">Dog
+                      </label>
+                      <label>
+                        <input value=" Candy" type="checkbox">Candy
+                      </label>
+                      <label>
+                        <input value=" Chocolate" type="checkbox">Chocolate
+                      </label>
+                    </div><!-- NOTE: END MINI COL- three -->
+                  </div><!-- NOTE: END MINI ROW 1 -->
                 </div><!-- NOTE: end form-group div *checkboxes -->
-                <div class="btn-group-vertical">
-                  <button class="btn btn-lg btn-primary" type="click" id="orderPizzaButton">Add Pizza</button>
-                  <button class="btn btn-lg btn-warning" type="submit" id="checkoutButton">Continue to Checkout</button>
+                <div class="btn-group-lg">
+                  <button class="btn btn-lg btn-primary" type="submit" id="orderPizzaButton"><span class="glyphicon glyphicon-plus"></span> Add Pizza</button>
+                  <button class="btn btn-lg btn-danger" type="reset"><span class="glyphicon-paste
+                    glyphicon glyphicon-alert"></span> Reset Form</button>
+
                 </div><!-- NOTE: end btn-group div -->
               </form><!-- NOTE: end pizzaDetailsForm div -->
             </div><!-- NOTE: end list-group-item div -->
           </div><!-- NOTE: end col1 div -->
-
           <div class="col-xs-6" id="customerOrder"><!-- NOTE: col2 div -->
             <div class="list-group-item">
               <h2 class="well">Your Order</h2>
-              <ul class="pizzaList">
-              </ul>
-            </div>
-            <div class="list-group-item">
-              <header class="panel panel-info">Your Total</header>
-              <div class="list-group-item" id="showTotal">
+              <div class="pizzaList">
+
+                <div class="dropdown">
+                  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Pizza
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-header"><a href="#">Size</a></li>
+                    <li class="size"></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header"><a href="#">Toppings</a></li>
+                    <li class="toppings"></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header"><a href="#">Price</a></li>
+                    <li class="price"></li>
+                  </ul>
+                </div>
+
+
               </div>
+            </div><!-- NOTE: end  group item div-->
+            <div class="list-group-item">
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-piggy-bank"></span>Your Total</h3>
+  </div>
+  <div class="panel-body">
+<span class="glyphicon glyphicon-usd"></span>
+
+  </div>
+  <div class="panel-footer">
+      <button class="btn btn-lg btn-info" type="submit" id="checkoutButton"><span class="glyphicon glyphicon-shopping-cart"></span> Continue to Checkout</button>
+  </div>
+</div>
+
+
+
+
+
             </div>
-
-            <!-- <panel id="showTotal" class="list-group-item"></panel> -->
-
           </div><!-- NOTE: end col2 div -->
         </div><!-- NOTE: end row div -->
       </div><!-- NOTE: end section div -->

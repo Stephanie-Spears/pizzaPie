@@ -10,10 +10,18 @@ body {
   text-align: center;
 }
 
-#showForm, #checkoutButton, #customerDetailsForm, #customerOrder, #removePizzaButton{
+#showForm, #customerOrder, #customerDetailsForm, .pizzaDetails{
   display: none;
 }
 
+#pizzaDetailsForm{
+  text-align: left;
+}
+
+.panel-xl{
+  font-size: 40px;
+  border: 1px solid green;
+}
 
 .btn-xl{
   padding: 10px 20px;
